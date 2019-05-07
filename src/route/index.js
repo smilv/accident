@@ -8,6 +8,7 @@ class Routes extends Component {
         return (
             <div>
                 <Route path="/" exact component={Home} />
+                <div>1</div>
             </div>
         );
     }
