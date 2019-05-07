@@ -11,7 +11,10 @@ module.exports = {
         filename: "static/js/[name].js"
     },
     resolve: {
-        extensions: [".js", ".jsx", ".json"]
+        extensions: [".js", ".jsx", ".json"],
+        alias: {
+            "@": path.resolve(__dirname, "../src")
+        }
     },
     module: {
         rules: [
