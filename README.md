@@ -14,7 +14,7 @@
 | index.js - 主入口文件
 
 #### 命令行
-
+npm install 下载资源包  
 npm start 本地开发  
 npm run build 打包编译
 
