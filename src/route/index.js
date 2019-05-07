@@ -3,7 +3,7 @@ import { Route, NavLink } from "react-router-dom";
 
 class Routes extends Component {
     render() {
-        return <div>1</div>;
+        return <div>2</div>;
     }
 }
 
