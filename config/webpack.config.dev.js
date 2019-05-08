@@ -25,6 +25,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
+                exclude: [/node_modules/],
                 use: [
                     MiniCssExtractPlugin.loader,
                     {
@@ -33,6 +34,16 @@ module.exports = {
                             modules: true,
                             localIdentName: "[name]__[local]___[hash:base64:5]"
                         }
+                    }
+                ]
+            },
+            {
+                test: /\.css$/,
+                include: [/node_modules/],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader"
                     }
                 ]
             },

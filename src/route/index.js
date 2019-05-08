@@ -1,66 +1,67 @@
 import React, { Component } from "react";
-import { Route, NavLink } from "react-router-dom";
-import { Menu } from "antd";
-import Home from "../pages/home";
+import { Route, Link, Switch, Redirect, withRouter } from "react-router-dom";
+import { Menu, Layout } from "antd";
+import DemoA from "../pages/demo-a";
+import DemoB from "../pages/demo-b";
 
 const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
+const { Sider, Content } = Layout;
 
 class Routes extends Component {
     render() {
         return (
             <div>
-                <Menu style={{ width: 256 }} defaultSelectedKeys={["1"]} defaultOpenKeys={["sub1"]} mode="inline">
-                    <SubMenu
-                        key="sub1"
-                        title={
-                            <span>
-                                <span>Navigation One</span>
-                            </span>
-                        }
+                <Layout>
+                    <Sider
+                        style={{
+                            overflow: "auto",
+                            height: "100vh",
+                            position: "fixed",
+                            left: 0
+                        }}
                     >
-                        <MenuItemGroup key="g1" title="Item 1">
-                            <Menu.Item key="1">Option 1</Menu.Item>
-                            <Menu.Item key="2">Option 2</Menu.Item>
-                        </MenuItemGroup>
-                        <MenuItemGroup key="g2" title="Item 2">
-                            <Menu.Item key="3">Option 3</Menu.Item>
-                            <Menu.Item key="4">Option 4</Menu.Item>
-                        </MenuItemGroup>
-                    </SubMenu>
-                    <SubMenu
-                        key="sub2"
-                        title={
-                            <span>
-                                <span>Navigation Two</span>
-                            </span>
-                        }
-                    >
-                        <Menu.Item key="5">Option 5</Menu.Item>
-                        <Menu.Item key="6">Option 6</Menu.Item>
-                        <SubMenu key="sub3" title="Submenu">
-                            <Menu.Item key="7">Option 7</Menu.Item>
-                            <Menu.Item key="8">Option 8</Menu.Item>
-                        </SubMenu>
-                    </SubMenu>
-                    <SubMenu
-                        key="sub4"
-                        title={
-                            <span>
-                                <span>Navigation Three</span>
-                            </span>
-                        }
-                    >
-                        <Menu.Item key="9">Option 9</Menu.Item>
-                        <Menu.Item key="10">Option 10</Menu.Item>
-                        <Menu.Item key="11">Option 11</Menu.Item>
-                        <Menu.Item key="12">Option 12</Menu.Item>
-                    </SubMenu>
-                </Menu>
-                <Route path="/" exact component={Home} />
+                        <Menu
+                            theme="dark"
+                            mode="inline"
+                            openKeys={["/demoa"]}
+                            selectedKeys={[this.props.location.pathname]}
+                            style={{ borderRight: 0 }}
+                        >
+                            <SubMenu
+                                key="/demoa"
+                                title={
+                                    <span>
+                                        <span>演示一</span>
+                                    </span>
+                                }
+                            >
+                                <Menu.Item key="/demoa/a">
+                                    <Link to="/demoa/a">事故处理</Link>
+                                </Menu.Item>
+                                <Menu.Item key="/demoa/b">
+                                    <Link to="/demoa/b">事故列表</Link>
+                                </Menu.Item>
+                            </SubMenu>
+                            <Menu.Item key="/demob">
+                                <Link to="/demob">演示二</Link>
+                            </Menu.Item>
+                        </Menu>
+                    </Sider>
+                    <Layout style={{ marginLeft: 200 }}>
+                        <Content style={{ overflow: "initial" }}>
+                            <div style={{ padding: "24px 36px", background: "#fff" }}>
+                                <Switch>
+                                    <Route path="/demoa" component={DemoA} />
+                                    <Route path="/demob" component={DemoB} />
+                                    <Redirect to="/demoa" />
+                                </Switch>
+                            </div>
+                        </Content>
+                    </Layout>
+                </Layout>
             </div>
         );
     }
 }
 
-export default Routes;
+export default withRouter(Routes);
