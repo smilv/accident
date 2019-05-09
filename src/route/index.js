@@ -36,7 +36,7 @@ class Routes extends Component {
                                 }
                             >
                                 <Menu.Item key="/demoa/a">
-                                    <Link to="/demoa/a">事故处理</Link>
+                                    <Link to="/demoa/a">事故申报</Link>
                                 </Menu.Item>
                                 <Menu.Item key="/demoa/b">
                                     <Link to="/demoa/b">事故列表</Link>
