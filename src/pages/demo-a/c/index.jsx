@@ -7,7 +7,7 @@ class C extends Component {
     constructor() {
         super();
         this.state = {
-            current: "1"
+            current: "2"
         };
     }
     handleClick = e => {
