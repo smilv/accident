@@ -133,43 +133,43 @@ class B extends Component {
                 <Modal title="调查信息录入" width={680} visible={this.state.visibleXX} onOk={this.handleOk} onCancel={this.handleCancel}>
                     <Tabs type="card">
                         <TabPane tab="调查信息" key="1">
-                            <Row gutter={12} style={{ lineHeight: "28px" }}>
+                            <Row gutter={12} style={{ lineHeight: "32px" }}>
                                 <Col span={4} style={{ textAlign: "right" }}>
                                     事故时间:
                                 </Col>
                                 <Col span={20}>2019-05-06 01:20:00</Col>
                             </Row>
-                            <Row gutter={12} style={{ lineHeight: "28px" }}>
+                            <Row gutter={12} style={{ lineHeight: "32px" }}>
                                 <Col span={4} style={{ textAlign: "right" }}>
                                     是否境外事故:
                                 </Col>
                                 <Col span={20}>境内</Col>
                             </Row>
-                            <Row gutter={12} style={{ lineHeight: "28px" }}>
+                            <Row gutter={12} style={{ lineHeight: "32px" }}>
                                 <Col span={4} style={{ textAlign: "right" }}>
                                     事故等级:
                                 </Col>
                                 <Col span={20}>重大事故</Col>
                             </Row>
-                            <Row gutter={12} style={{ lineHeight: "28px" }}>
+                            <Row gutter={12} style={{ lineHeight: "32px" }}>
                                 <Col span={4} style={{ textAlign: "right" }}>
                                     事故种类:
                                 </Col>
                                 <Col span={20}>碰撞</Col>
                             </Row>
-                            <Row gutter={12} style={{ lineHeight: "28px" }}>
+                            <Row gutter={12} style={{ lineHeight: "32px" }}>
                                 <Col span={4} style={{ textAlign: "right" }}>
                                     是否造成污染:
                                 </Col>
                                 <Col span={20}>否</Col>
                             </Row>
-                            <Row gutter={12} style={{ lineHeight: "28px" }}>
+                            <Row gutter={12} style={{ lineHeight: "32px" }}>
                                 <Col span={4} style={{ textAlign: "right" }}>
                                     事故辖区:
                                 </Col>
                                 <Col span={20}>天津海事局</Col>
                             </Row>
-                            <Row gutter={12} style={{ lineHeight: "28px" }}>
+                            <Row gutter={12} style={{ lineHeight: "32px" }}>
                                 <Col span={4} style={{ textAlign: "right" }}>
                                     事故地点:
                                 </Col>
