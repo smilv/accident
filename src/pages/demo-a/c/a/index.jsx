@@ -45,13 +45,7 @@ const columns = [
     {
         title: "操作",
         key: "cz",
-        render: (text, record) => (
-            <span>
-                <a href="javascript:;">立案</a>
-                <Divider type="vertical" />
-                <a href="javascript:;">结案</a>
-            </span>
-        )
+        render: (text, record) => <span>{record.key === "1" ? <a href="javascript:;">立案</a> : <a href="javascript:;">结案</a>}</span>
     }
 ];
 

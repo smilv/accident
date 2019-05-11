@@ -1,32 +1,21 @@
 import React, { Component } from "react";
-import { Menu } from "antd";
+import { Tabs } from "antd";
 import A from "./a";
 import B from "./b";
 
+const TabPane = Tabs.TabPane;
+
 class C extends Component {
-    constructor() {
-        super();
-        this.state = {
-            current: "2"
-        };
-    }
-    handleClick = e => {
-        this.setState({
-            current: e.key
-        });
-    };
     render() {
         return (
-            <div>
-                <Menu mode="horizontal" selectedKeys={[this.state.current]} onClick={this.handleClick}>
-                    <Menu.Item key="1">上报管理</Menu.Item>
-                    <Menu.Item key="2">调查组管理</Menu.Item>
-                </Menu>
-                <div style={{ marginTop: "40px" }}>
-                    {this.state.current === "1" && <A />}
-                    {this.state.current === "2" && <B />}
-                </div>
-            </div>
+            <Tabs defaultActiveKey="1">
+                <TabPane tab="上报管理" key="1">
+                    <A />
+                </TabPane>
+                <TabPane tab="调查管理" key="2">
+                    <B />
+                </TabPane>
+            </Tabs>
         );
     }
 }
