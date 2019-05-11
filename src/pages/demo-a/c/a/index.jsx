@@ -39,11 +39,17 @@ const columns = [
         dataIndex: "gxq"
     },
     {
+        title: "立案状态",
+        dataIndex: "lazt"
+    },
+    {
         title: "操作",
         key: "cz",
         render: (text, record) => (
             <span>
-                <a href="javascript:;">上报</a>
+                <a href="javascript:;">立案</a>
+                <Divider type="vertical" />
+                <a href="javascript:;">结案</a>
             </span>
         )
     }
@@ -60,7 +66,8 @@ const data = [
         sw: "0",
         jjss: "1",
         cc: "0",
-        gxq: "杭州市地方海事处"
+        gxq: "杭州市地方海事处",
+        lazt: ""
     },
     {
         key: "2",
@@ -72,50 +79,15 @@ const data = [
         sw: "0",
         jjss: "1",
         cc: "1",
-        gxq: "珠海海事处"
-    },
-    {
-        key: "3",
-        rq: "2019-05-06",
-        mc: "浙江州货碰撞",
-        zl: "碰撞",
-        dj: "小事故",
-        ss: "0",
-        sw: "0",
-        jjss: "1",
-        cc: "0",
-        gxq: "杭州市地方海事处"
-    },
-    {
-        key: "4",
-        rq: "2018-11-06",
-        mc: "中石火灾/爆炸",
-        zl: "火灾/爆炸",
-        dj: "一般小事故",
-        ss: "0",
-        sw: "0",
-        jjss: "1",
-        cc: "0",
-        gxq: "杭州市地方海事处"
-    },
-    {
-        key: "5",
-        rq: "2019-05-06",
-        mc: "浙江州货碰撞",
-        zl: "碰撞",
-        dj: "小事故",
-        ss: "0",
-        sw: "0",
-        jjss: "2",
-        cc: "1",
-        gxq: "洋山海事处"
+        gxq: "珠海海事处",
+        lazt: "已立案"
     }
 ];
 
-class B extends Component {
+class A extends Component {
     render() {
         return <Table columns={columns} dataSource={data} />;
     }
 }
 
-export default B;
+export default A;

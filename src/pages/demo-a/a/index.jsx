@@ -36,7 +36,7 @@ class A extends Component {
 
                 <Form.Item wrapperCol={{ span: 12, offset: 5 }}>
                     <Button type="primary" onClick={this.handleSubmit}>
-                        申报
+                        录入
                     </Button>
                 </Form.Item>
             </Form>
