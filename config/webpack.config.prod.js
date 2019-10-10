@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 module.exports = {
     mode: "production",
     entry: "./src/index.js",
@@ -66,7 +67,9 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         new MiniCssExtractPlugin({
             filename: "static/css/main.[contenthash:8].css"
-        })
+        }),
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+        new BundleAnalyzerPlugin()
     ],
     optimization: {
         splitChunks: {
